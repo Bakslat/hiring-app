@@ -18,7 +18,6 @@ export class UserService {
   ) { }
 
   login(email: string, password: string) {
-    console.log(email, password);
     return this.http.post<any>(`${environment.apiUrl}/login`, {"email": email, "password": password})
       .pipe(map(user => {
         localStorage.setItem('user', JSON.stringify(user));
@@ -26,4 +25,11 @@ export class UserService {
     }));
   }
 
+  register(email: string, password: string) {
+    return this.http.post<any>(`${environment.apiUrl}/register`, {"email": email, "password": password})
+      .pipe(map(user => {
+        localStorage.setItem('user', JSON.stringify(user));
+        return user;
+      }));
+  }
 }
