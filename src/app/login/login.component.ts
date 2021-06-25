@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   })
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +33,9 @@ export class LoginComponent implements OnInit {
         err => {
           console.log(err.error);
       });
+  }
+
+  goToRegister() {
+    this.router.navigateByUrl('/register');
   }
 }
