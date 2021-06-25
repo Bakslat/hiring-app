@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$K1ef6bpNa.mrs4d/LvgJhe1slplZpF4C9WSIiU..PN/jupq0M3wOC",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
